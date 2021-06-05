@@ -1,0 +1,28 @@
+#products{
+    margin: 10px;
+    display: flex;
+    flex-wrap:wrap;
+    flex-flow:row;
+    background-color: aqua;
+}
+#products>div{
+    background-color: chartreuse;
+    width: 500px;
+    margin: 30px;
+    padding:20px;
+    font-size: 20px;
+}
+#products>div>img{
+    width: 300px;
+    height: 250px;
+}
+h4 {
+    display: none;
+}
+button{
+    background-color:tomato;
+    border-radius: 10px;
+    font-family:fantasy;
+    font-size: 20px;
+    border-color: violet;
+}
