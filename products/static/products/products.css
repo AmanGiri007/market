@@ -2,18 +2,17 @@
     margin: 10px;
     display: flex;
     flex-wrap:wrap;
-    flex-flow:row;
     background-color: aqua;
 }
 #products>div{
     background-color: chartreuse;
-    width: 500px;
+    width: 18%;
     margin: 30px;
     padding:20px;
     font-size: 20px;
 }
 #products>div>img{
-    width: 300px;
+    width: 100%;
     height: 250px;
 }
 h4 {

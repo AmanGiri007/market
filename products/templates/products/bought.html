@@ -1,0 +1,14 @@
+{% extends "products/layout.html" %}
+{% block head %}
+<title>Product {{product.id}}</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'products/bought.css' %}">
+{% endblock head %}
+{% block body %}
+<a href="{% url 'products' %}">Home</a>
+<div>
+    <h1>You bought {{product.product_name}}</h1>
+    <img src="{{product.product_image.url}}" alt="{{product.product_name}}'s image">
+    <h2>Price: ${{product.product_rate}}</h2>
+</div>
+{% endblock body %}

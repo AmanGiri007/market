@@ -7,8 +7,6 @@
 {% endblock head %}
 {% block body %}
 <div id="products">
-    <form method="POST" action="{% url 'products' %}"></form>
-    {% csrf_token %}
     {% for product in products %}
     <div>
         <img data-ids="{{product.product_name}}" src="{{product.product_image.url}}"
@@ -18,17 +16,16 @@
         {% if product.stock_available > 0 %}
 
         <p id="stock-{{product.product_name}}">In Stock: {{product.stock_available}}</p>
-
+        <form method="post" action="{% url 'rate_change' product.id %}">
+            {% csrf_token %}
+            <Button name="stock-value" type="submit" data-value="stock-{{product.product_name}}" id="buy"
+                value="{{product.stock_available}}">Buy</Button>
+        </form>
         {% else %}
         <p>Out of stock</p>
         {% endif %}
-
-        <Button name="stock-value" type="submit" data-value="stock-{{product.product_name}}" id="buy"
-            value="{{product.stock_available}}">Buy</Button>
-
         <h4 id="{{product.product_name}}">{{product.product_description}}</h4>
     </div>
     {% endfor %}
-    </form>
 </div>
 {% endblock body %}
