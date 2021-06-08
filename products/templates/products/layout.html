@@ -15,6 +15,13 @@
                 background-color: blue;
                 font-size: 40px;
             }
+
+            a {
+                background-color: yellow;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                margin: 5px;
+                padding: 5px;
+            }
         </style>
     </head>
 
@@ -24,7 +31,8 @@
 
         {% endblock body %}
         <a href="{% url 'products' %}">Home</a>
-        <a href="{% url 'customers' %}">Login</a>
+        <a href="{% url 'login' %}">Login</a>
+        <a href=" {% url 'logout' %} ">Logout</a>
     </body>
 
 </html>
