@@ -1,0 +1,19 @@
+h1{
+    background-color: yellow;
+    text-align: center;
+}
+form{
+    text-align: center;
+    background-color: cornflowerblue;
+    height: 300px;
+    font-size: 50px;
+}
+button{
+    color: yellow;
+    margin: 5px;
+    padding: 5px;
+    background-color: green;
+}
+form>p{
+    font-size: 20px;
+}

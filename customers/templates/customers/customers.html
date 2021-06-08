@@ -1,0 +1,18 @@
+{% extends "products/layout.html" %}
+{% block head %}
+<title>Customer</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'customers/customers.css' %}">
+{% endblock head %}
+{% load crispy_forms_tags %}
+{% block body %}
+<h1>Customers SignIn</h1>
+<div>
+    <form action="{% url 'products' %} method='post' ">
+        {% csrf_token %}
+        {{forms|crispy}}
+        <p>Don't you have account?<a href="">Create</a></p>
+        <button type="submit">Login</button>
+    </form>
+</div>
+{% endblock body %}

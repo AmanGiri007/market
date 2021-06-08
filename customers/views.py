@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import CustomerForm
 # Create your views here.
 
 
-def index(request):
-    return HttpResponse('<h1>Detail of the Customer who have bought the products.</h1>')
+def customer(request):
+    return render(request, 'customers/customers.html', {
+        'forms': CustomerForm,
+    })
