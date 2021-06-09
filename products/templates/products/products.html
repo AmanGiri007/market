@@ -7,6 +7,7 @@
 {% endblock head %}
 {% block body %}
 <div id="products">
+    {{message}}
     {% for product in products %}
     <div>
         <img data-ids="{{product.product_name}}" src="{{product.product_image.url}}"

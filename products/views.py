@@ -16,10 +16,17 @@ class ProductView(View):
 
     def post(request, products_id):
         if request.method == "POST":
-            change = request.POST.get('stock-value', None)
-            product = Product.objects.get(pk=products_id)
-            product.stock_available = change
-            product.save()
-            return render(request, 'products/bought.html', {
-                'product': product,
-            })
+            if request.user.is_authenticated:
+                users = request.user
+                change = request.POST.get('stock-value', None)
+                product = Product.objects.get(pk=products_id)
+                product.stock_available = change
+                product.owners.add(users)
+                product.save()
+                return render(request, 'products/bought.html', {
+                    'product': product,
+                })
+            else:
+                return render(request, 'products/products.html', {
+                    'message': 'User not logged in.'
+                })

@@ -1,0 +1,14 @@
+div{
+    text-align: center;
+    background-color: crimson;
+    font-size: 20px;
+}
+p{
+    text-align: center;
+    background-color: springgreen;
+}
+h2#user_name{
+    text-align: center;
+    padding: 10px;
+    background-color: tomato;
+}

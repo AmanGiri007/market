@@ -2,6 +2,11 @@ h1{
     background-color: yellow;
     text-align: center;
 }
+h1#logged{
+    background-color:lightgreen;
+    text-align: center;
+    font-family: sans-serif;
+}
 form{
     text-align: center;
     background-color: cornflowerblue;

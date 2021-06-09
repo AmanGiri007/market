@@ -66,3 +66,21 @@ class RegisterView(View):
             new_user.save()
             return HttpResponseRedirect(reverse('products'))
         return HttpResponse('Form not filled properly')
+
+
+class UserView(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            users = request.user
+            user_name = users.username.capitalize()
+            products = users.products.all()
+            total_rate = 0
+            for i in range(len(products)):
+                total_rate += products[i].product_rate
+            # print(total_rate)
+            return render(request, 'customers/customers_bucket.html', {
+                'products': products,
+                'rates': total_rate,
+                'users': user_name,
+            })
+        return HttpResponseRedirect(reverse('products'))

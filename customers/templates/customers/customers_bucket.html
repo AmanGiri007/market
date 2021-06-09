@@ -1,0 +1,20 @@
+{% extends "products/layout.html" %}
+{% block head %}
+<title>Bucket List</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'customers/bucket.css' %}">
+{% endblock head %}
+{% block body %}
+<div>
+    <h2 id="user_name">{{users}}</h2>
+    <h3>Products you have bought</h3>
+    {% for product in products %}
+    {{product.product_name}}
+    ${{product.product_rate}}
+    <br>
+    {% endfor %}
+    <p>
+        Total:{{rates}}
+    </p>
+</div>
+{% endblock body %}

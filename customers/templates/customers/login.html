@@ -8,17 +8,17 @@
 {% block body %}
 <h1>Customers SignIn</h1>
 <div>
-    {% if user.is_authenticated %}
-      {{log}}
-    {% else %}
-    {{no_user}}
-    <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        {{forms|crispy}}
-        <p>Don't you have account?<a href="{% url 'register' %}">Create</a></p>
-        <button type="submit">Login</button>
-    </form>
+  {% if user.is_authenticated %}
+  <h1 id="logged">{{log}}</h1>
+  {% else %}
+  {{no_user}}
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {{forms|crispy}}
+    <p>Don't you have account?<a href="{% url 'register' %}">Create</a></p>
+    <button type="submit">Login</button>
+  </form>
 
-    {% endif %}
+  {% endif %}
 </div>
 {% endblock body %}
