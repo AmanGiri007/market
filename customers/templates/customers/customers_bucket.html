@@ -7,6 +7,7 @@
 {% block body %}
 <div>
     <h2 id="user_name">{{users}}</h2>
+    {% if products %}
     <h3>Products you have bought</h3>
     {% for product in products %}
     {{product.product_name}}
@@ -16,5 +17,8 @@
     <p>
         Total:{{rates}}
     </p>
+    {% else %}
+    <h4>Your Bucket is empty.</h4>
+    {% endif %}
 </div>
 {% endblock body %}
